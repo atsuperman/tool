@@ -23,11 +23,18 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .container input[type="text"] {
-            width: 200px;
+            width: calc(100% - 48px); /* Adjusted width to accommodate the home button */
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            float: left; /* Float the text box to allow space for the home button */
+        }
+        .container .home-button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
         }
         .container button {
             padding: 10px 20px;
@@ -44,29 +51,21 @@
             color: red;
             margin-top: 10px;
         }
-        .home-button {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
     <div class="container">
+        <a href="https://brazen-achieved-seeder.glitch.me/" class="home-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+        </a>
         <h1>Tool</h1>
         <input type="text" id="codeInput" placeholder="Enter code">
         <button onclick="checkCode()">Go</button>
         <div id="errorMessage" class="error"></div>
     </div>
-
-    <!-- Home Button -->
-    <a href="https://brazen-achieved-seeder.glitch.me/" class="home-button">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-        </svg>
-    </a>
 
     <script>
         function checkCode() {
