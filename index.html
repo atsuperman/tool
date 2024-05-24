@@ -15,6 +15,7 @@
             background-color: #f0f0f0;
         }
         .container {
+            position: relative;
             text-align: center;
             background: #fff;
             padding: 20px;
@@ -43,6 +44,12 @@
             color: red;
             margin-top: 10px;
         }
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -52,6 +59,14 @@
         <button onclick="checkCode()">Go</button>
         <div id="errorMessage" class="error"></div>
     </div>
+
+    <!-- Home Button -->
+    <a href="https://brazen-achieved-seeder.glitch.me/" class="home-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+    </a>
 
     <script>
         function checkCode() {
